@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=69,<83"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "satquery-ai"
+version = "0.1.0"
+description = "Evidence-first remote-sensing assistant MVP for SIH26167"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "numpy>=1.26,<3", "Pillow>=10.4,<13", "opencv-python-headless>=4.10,<5",
+  "rasterio>=1.4,<1.5", "affine>=2.4,<3", "streamlit>=1.49,<2", "pydantic>=2.9,<3",
+  "PyYAML>=6.0,<7", "psutil>=6,<8"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1"]
+ml = ["torch>=2.6,<2.9", "torchvision>=0.21,<0.24", "transformers==4.57.1", "accelerate>=1.2,<2"]
+quantization = ["bitsandbytes>=0.46,<0.49; sys_platform == 'linux'"]
+training = ["peft>=0.17,<0.19"]
+
+[project.scripts]
+satquery = "satquery.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["satquery*", "training*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

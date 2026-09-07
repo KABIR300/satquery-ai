@@ -1,0 +1,13 @@
+# Direct packages observed in the Windows Python 3.11.3 validation environment.
+# Optional ML/training packages are not installed or constrained here.
+numpy==2.4.6
+Pillow==12.3.0
+opencv-python-headless==4.14.0.94
+rasterio==1.4.4
+affine==2.4.0
+streamlit==1.63.0
+pydantic==2.13.5
+PyYAML==6.0.3
+psutil==7.2.2
+pytest==9.1.1
+ruff==0.16.6

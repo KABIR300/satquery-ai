@@ -1,0 +1,15 @@
+profile: cloud
+backend: qwen
+device: cuda
+dtype: auto
+model_id: Qwen/Qwen2.5-VL-3B-Instruct
+model_revision: main
+allow_model_download: false
+model_cache: .cache/models
+max_image_size: 1536
+tile_size: 768
+max_new_tokens: 512
+max_visual_pixels: 802816
+change_threshold: 0.15
+min_region_pixels: 24
+evidence_threshold: 0.7

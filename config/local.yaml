@@ -1,0 +1,15 @@
+profile: local
+backend: mock
+device: auto
+dtype: auto
+model_id: Qwen/Qwen2.5-VL-3B-Instruct
+model_revision: main
+allow_model_download: false
+model_cache: .cache/models
+max_image_size: 1024
+tile_size: 512
+max_new_tokens: 384
+max_visual_pixels: 401408
+change_threshold: 0.15
+min_region_pixels: 16
+evidence_threshold: 0.7
